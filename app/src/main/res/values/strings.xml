@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">AlexanderMaynard_COMP304_001_Hands-On_Test1_S24</string>
+    <string name="brain_challenge_title">Brain Challenge</string>
+    <string name="brain_challenge_description">Challenge Your Brain with scientifically designed exercises</string>
+    <string name="brain_challenge_logo_description">Brain Challenge Logo</string>
+    <string name="brain_challenge_image_btn_description">Image that says \'select exercises\'</string>
+    <string name="activity_maynard_zig_zag_image">Zig zag image</string>
+    <string name="activity_maynard_checkbox_1_text">Lose things</string>
+    <string name="activity_maynard_checkbox_2_text">Remember things quickly</string>
+    <string name="activity_maynard_checkbox_3_text">Learn things quickly</string>
+    <string name="activity_maynard_checkbox_4_text">Keep track of multiple things</string>
+    <string name="activity_maynard_next_button_text">NEXT</string>
 </resources>
