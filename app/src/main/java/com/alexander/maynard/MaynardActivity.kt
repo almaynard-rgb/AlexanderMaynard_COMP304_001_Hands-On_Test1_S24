@@ -1,7 +1,6 @@
 package com.alexander.maynard
 
 import android.os.Bundle
-import android.view.Gravity
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.Toast
@@ -9,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.Snackbar
 
 // Student ID: 301170707
 class MaynardActivity : AppCompatActivity() {
@@ -34,15 +34,18 @@ class MaynardActivity : AppCompatActivity() {
 
         val nextBtn = findViewById<Button>(R.id.activity_maynard_next_button)
         nextBtn.setOnClickListener {
-            var messageToToast : String = ""
+            var messageToToast  = ""
             for (checkbox in checkboxesArray) {
                 if (checkbox.isChecked) {
-                    messageToToast += "${checkbox.text}\n"
+                    messageToToast += "${checkbox.text} "
                 }
             }
-            val t = Toast.makeText(applicationContext, messageToToast, Toast.LENGTH_SHORT)
-            t.setGravity(Gravity.FILL, 40, 40)
-            t.show()
+
+            //toast to display all the text
+            Toast.makeText(applicationContext, messageToToast, Toast.LENGTH_SHORT).show()
+
+            //Snackbar to prove everything is there in the Toast as some of the text is cutoff and custom Toasts are deprecated.
+            Snackbar.make(it, messageToToast, Snackbar.LENGTH_LONG).show()
         }
     }
 }
