@@ -37,6 +37,7 @@ class MaynardActivity : AppCompatActivity() {
             findViewById(R.id.activity_maynard_checkbox_4)
         )
 
+        supportActionBar?.title = resources.getString(R.string.activity_maynard_actionbar_text)
 
         //create zig zag line
         createZigZagLine(resources.getStringArray(R.array.zig_zag_image_y_coordinates))
@@ -46,7 +47,7 @@ class MaynardActivity : AppCompatActivity() {
             var messageToToast  = ""
             for (checkbox in checkboxesArray) {
                 if (checkbox.isChecked) {
-                    messageToToast += "${checkbox.text} "
+                    messageToToast += "${checkbox.text}, "
                 }
             }
 
@@ -59,6 +60,8 @@ class MaynardActivity : AppCompatActivity() {
     }
 
     private fun createZigZagLine(yCoordinates: Array<String>) {
+        //defined amount to increment by (set by the midterm specifications).
+        val definedXCoordinateIncrementAmount = 100F
         //for the imageview
         val zigZagImage = findViewById<ImageView>(R.id.activity_maynard_image_view)
         val bitmap : Bitmap = Bitmap.createBitmap(800, 100, Bitmap.Config.ARGB_8888)
@@ -73,8 +76,8 @@ class MaynardActivity : AppCompatActivity() {
             if(index == yCoordinates.size -1) {
                 return
             } else {
-                canvas.drawLine(currentXCoordinate, yCoordinates[index].toFloat(), currentXCoordinate + 100F, yCoordinates[index + 1].toFloat(), paint)
-                currentXCoordinate += 100F
+                canvas.drawLine(currentXCoordinate, yCoordinates[index].toFloat(), currentXCoordinate + definedXCoordinateIncrementAmount, yCoordinates[index + 1].toFloat(), paint)
+                currentXCoordinate += definedXCoordinateIncrementAmount
             }
         }
     }

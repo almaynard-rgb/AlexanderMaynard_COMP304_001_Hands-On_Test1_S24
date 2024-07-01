@@ -24,6 +24,8 @@ class AlexanderActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
+        supportActionBar?.title = resources.getString(R.string.activity_alexander_actionbar_text)
+
         val selectExercisesImgBtn = findViewById<ImageButton>(R.id.activity_alexander_brain_challenge_image_btn)
         selectExercisesImgBtn.setOnClickListener {
             val i = Intent(this@AlexanderActivity, MaynardActivity::class.java)
