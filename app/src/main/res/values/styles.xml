@@ -6,6 +6,7 @@
         <item name="android:layout_marginStart">20dp</item>
         <item name="android:layout_marginEnd">20dp</item>
         <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textColor">@color/black</item>
     </style>
     <style name="checkbox">
         <item name="android:layout_width">wrap_content</item>
@@ -36,7 +37,6 @@
     <style name="image_button">
         <item name="android:layout_marginTop">10dp</item>
         <item name="layout_constraintHorizontal_bias">0.495</item>
-        <item name="android:textColor">@color/black</item>
     </style>
     <style name="brain_challenge_app_logo">
         <item name="android:layout_width">70dp</item>
