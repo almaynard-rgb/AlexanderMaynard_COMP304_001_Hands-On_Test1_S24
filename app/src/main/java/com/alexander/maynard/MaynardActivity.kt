@@ -61,10 +61,8 @@ class MaynardActivity : AppCompatActivity() {
                 }
             }
             //toast to display all the selected checkboxes after each 'checked' checkbox text is appended properly
+            //*****NOTE: some of the Toast text is cutoff as custom Toast dialogs are deprecated
             Toast.makeText(applicationContext, messageToToast, Toast.LENGTH_SHORT).show()
-
-            //Snackbar to prove everything is there in the Toast as some of the text is cutoff and custom Toast dialogs are deprecated.
-            Snackbar.make(it, messageToToast, Snackbar.LENGTH_LONG).show()
         }
     }
 
