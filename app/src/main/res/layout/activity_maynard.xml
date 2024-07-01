@@ -11,12 +11,7 @@
     <!--ImageView that will display the zig zag lines, just a blue background until the lines are drawn-->
     <ImageView
         android:id="@+id/activity_maynard_image_view"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/dark_blue"
+        style="@style/drawing_bitmap_image_view"
         android:contentDescription="@string/activity_maynard_zig_zag_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,10 +21,7 @@
     <!--Checkbox 1-->
     <CheckBox
         android:id="@+id/activity_maynard_checkbox_1"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        style="@style/checkbox"
         android:text="@string/activity_maynard_checkbox_1_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_maynard_image_view" />
@@ -37,10 +29,7 @@
     <!--Checkbox 2-->
     <CheckBox
         android:id="@+id/activity_maynard_checkbox_2"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        style="@style/checkbox"
         android:text="@string/activity_maynard_checkbox_2_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_maynard_checkbox_1" />
@@ -48,10 +37,7 @@
     <!--Checkbox 3-->
     <CheckBox
         android:id="@+id/activity_maynard_checkbox_3"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        style="@style/checkbox"
         android:text="@string/activity_maynard_checkbox_3_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_maynard_checkbox_2" />
@@ -59,10 +45,7 @@
     <!--Checkbox 4-->
     <CheckBox
         android:id="@+id/activity_maynard_checkbox_4"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        style="@style/checkbox"
         android:text="@string/activity_maynard_checkbox_4_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_maynard_checkbox_3" />
@@ -70,13 +53,8 @@
     <!--Next button that will display all checked checkbox items-->
     <Button
         android:id="@+id/activity_maynard_next_button"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
+        style="@style/button_style"
         android:text="@string/activity_maynard_next_button_text"
-        android:textColorLink="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_maynard_checkbox_4" />

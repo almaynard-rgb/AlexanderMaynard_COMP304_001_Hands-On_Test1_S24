@@ -1,7 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.AlexanderMaynard_COMP304_001_HandsOn_Test1_S24" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.AlexanderMaynard_COMP304_001_HandsOn_Test1_S24" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/purple</item>
+        <item name="colorSecondary">@color/grey</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/grey</item>
     </style>
 </resources>

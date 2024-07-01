@@ -11,12 +11,8 @@
     <!--Title for the application-->
     <TextView
         android:id="@+id/activity_alexander_brain_challenge_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        style="@style/title_text_view"
         android:text="@string/brain_challenge_title"
-        android:textColor="@color/grey"
-        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,13 +20,8 @@
     <!--Description of the application-->
     <TextView
         android:id="@+id/activity_alexander_brain_challenge_description"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/grey"
+        style="@style/description_text_view"
         android:text="@string/brain_challenge_description"
-        android:textAlignment="center"
-        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_alexander_brain_challenge_title" />
@@ -38,26 +29,24 @@
     <!--Image view for this activity-->
     <ImageView
         android:id="@+id/activity_alexander_brain_challenge_image_view"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="10dp"
+        style="@style/brain_challenge_app_logo"
         android:contentDescription="@string/brain_challenge_logo_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_alexander_brain_challenge_description"
-        android:background="@drawable/brain_challenge_image" />
+        tools:ignore="ImageContrastCheck"/>
 
     <!--Image button for this activity-->
     <ImageButton
         android:id="@+id/activity_alexander_brain_challenge_image_btn"
+        style="@style/image_button"
         android:layout_width="258dp"
         android:layout_height="48dp"
-        android:layout_marginTop="10dp"
         android:background="@drawable/brain_challenge_select_exercises"
         android:contentDescription="@string/brain_challenge_image_btn_description"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_alexander_brain_challenge_image_view" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_alexander_brain_challenge_image_view"
+        tools:ignore="ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
