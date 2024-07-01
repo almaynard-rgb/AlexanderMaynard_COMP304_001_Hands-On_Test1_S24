@@ -28,8 +28,11 @@ class MaynardActivity : AppCompatActivity() {
         }
     }
 
+    //OnStart override
     override fun onStart() {
         super.onStart()
+
+        //find a reference to the checkboxes and add them the checkBoxesArray for later use
         val checkboxesArray : Array<CheckBox> = arrayOf(
             findViewById(R.id.activity_maynard_checkbox_1),
             findViewById(R.id.activity_maynard_checkbox_2),
@@ -37,47 +40,68 @@ class MaynardActivity : AppCompatActivity() {
             findViewById(R.id.activity_maynard_checkbox_4)
         )
 
+        //change the action bar title for this activity
         supportActionBar?.title = resources.getString(R.string.activity_maynard_actionbar_text)
 
-        //create zig zag line
+        //create zig zag line like in the midterm example (pass in the y coordinates string-array from strings.xml)
         createZigZagLine(resources.getStringArray(R.array.zig_zag_image_y_coordinates))
 
+        //get a reference to the next button
         val nextBtn = findViewById<Button>(R.id.activity_maynard_next_button)
+        //create a click listener for the next button
         nextBtn.setOnClickListener {
+            //when clicked reset the message
             var messageToToast  = ""
+            //loop through all checkboxes to see which ones are checked
             for (checkbox in checkboxesArray) {
+                //if a checkbox is checked
                 if (checkbox.isChecked) {
+                    //append the checkbox text to the message
                     messageToToast += "${checkbox.text}, "
                 }
             }
-
-            //toast to display all the text
+            //toast to display all the selected checkboxes after each 'checked' checkbox text is appended properly
             Toast.makeText(applicationContext, messageToToast, Toast.LENGTH_SHORT).show()
 
-            //Snackbar to prove everything is there in the Toast as some of the text is cutoff and custom Toasts are deprecated.
+            //Snackbar to prove everything is there in the Toast as some of the text is cutoff and custom Toast dialogs are deprecated.
             Snackbar.make(it, messageToToast, Snackbar.LENGTH_LONG).show()
         }
     }
 
+    //function to create the zig zag line line like in the midterm example
     private fun createZigZagLine(yCoordinates: Array<String>) {
         //defined amount to increment by (set by the midterm specifications).
-        val definedXCoordinateIncrementAmount = 100F
-        //for the imageview
+        val xCoordinateIncrementValue = 100F
+
+        //get a reference to the imageview
         val zigZagImage = findViewById<ImageView>(R.id.activity_maynard_image_view)
-        val bitmap : Bitmap = Bitmap.createBitmap(800, 100, Bitmap.Config.ARGB_8888)
-        val canvas = Canvas(bitmap)
-        val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-        paint.setColor(Color.WHITE)
-        paint.strokeWidth = 8F
-        zigZagImage.setImageBitmap(bitmap)
+        //create a bitmap, canvas and paint objects
+        val zigZagBitmap : Bitmap = Bitmap.createBitmap(800, 100, Bitmap.Config.ARGB_8888)
+        val zigZagCanvas = Canvas(zigZagBitmap)
+        val zigZagPaint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        //set the color to white (like in the example)
+        zigZagPaint.setColor(Color.WHITE)
+        //set the width of the paint stroke
+        zigZagPaint.strokeWidth = 8F
+        //set the image bitmap to the zigZagBitmap
+        zigZagImage.setImageBitmap(zigZagBitmap)
+
+        //set the current (initial x coordinate to 0 like the midterm states)
         var currentXCoordinate = 0.0F
 
+        //loop through all y values to paint our lines
         for (index in yCoordinates.indices) {
+            //if we hit the second last index we should return as the lines are painted by using the current and next point,
+            //therefore the last point will have an out of index error despite already being drawn without this check
             if(index == yCoordinates.size -1) {
                 return
+            //otherwise...
             } else {
-                canvas.drawLine(currentXCoordinate, yCoordinates[index].toFloat(), currentXCoordinate + definedXCoordinateIncrementAmount, yCoordinates[index + 1].toFloat(), paint)
-                currentXCoordinate += definedXCoordinateIncrementAmount
+                //... draw the lines by using the current point and the next points for x and y coordinates
+                zigZagCanvas.drawLine(currentXCoordinate, yCoordinates[index].toFloat(), currentXCoordinate + xCoordinateIncrementValue, yCoordinates[index + 1].toFloat(), zigZagPaint)
+                //increment our x values by 100 as stated by the midterm
+                currentXCoordinate += xCoordinateIncrementValue
             }
         }
     }
