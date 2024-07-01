@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name">AlexanderMaynard_COMP304_001_Hands-On_Test1_S24</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="Typos">AlexanderMaynard_COMP304_001_Hands-On_Test1_S24</string>
     <string name="brain_challenge_title">Brain Challenge</string>
     <string name="brain_challenge_description">Challenge Your Brain with scientifically designed exercises</string>
     <string name="brain_challenge_logo_description">Brain Challenge Logo</string>
@@ -10,4 +10,15 @@
     <string name="activity_maynard_checkbox_3_text">Learn things quickly</string>
     <string name="activity_maynard_checkbox_4_text">Keep track of multiple things</string>
     <string name="activity_maynard_next_button_text">NEXT</string>
+    <string-array name="zig_zag_image_y_coordinates">
+        <item>50</item>
+        <item>25</item>
+        <item>50</item>
+        <item>25</item>
+        <item>50</item>
+        <item>25</item>
+        <item>50</item>
+        <item>25</item>
+        <item>50</item>
+    </string-array>
 </resources>
